@@ -32,7 +32,8 @@ public class PromptCollect {
     private String save;
     @Value("${PromptCollect.sampler}")
     private String sampler;
-
+    @Value("${Main.timer}")
+    private Integer time;
 
     // Getters for simple values
     public String getNegative() { return negative; }
@@ -41,6 +42,9 @@ public class PromptCollect {
     public Integer getHeight() { if (height == null) { return 500; } else { return height; }  }
     public String getSave() { if (save.isEmpty()) { return "true"; } else { return save; } }
     public String getSampler() { if (sampler.isEmpty()) { return "Euler a"; } else { return sampler; } }
+    public long getTime() { if (time == null || time < 0) { return 0; } else { return time; } }
+
+
 
     Random digit = new Random();
     public final StringBuilder prompt = new StringBuilder();

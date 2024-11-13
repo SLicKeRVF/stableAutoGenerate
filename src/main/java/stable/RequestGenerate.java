@@ -1,6 +1,5 @@
 package stable;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
@@ -28,6 +27,5 @@ public class RequestGenerate {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        context.close();
     }
 }
